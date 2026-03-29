@@ -1,4 +1,42 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+  }
+
 .done {
     text-decoration: line-through;
     opacity: 0.6;
+}
+
+.taskManager {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#taskList {
+    list-style: circle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#taskList.done {
+    list-style: disc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

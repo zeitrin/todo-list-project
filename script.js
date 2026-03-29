@@ -10,6 +10,17 @@ addBtn.addEventListener("click", () => {
     return;
   }
 
+  const normalizedText = text.toLowerCase();
+  const existingTasks = Array.from(taskList.querySelectorAll("li span"));
+  const isDuplicate = existingTasks.some(
+    (task) => task.textContent.trim().toLowerCase() === normalizedText
+  );
+
+  if (isDuplicate) {
+    alert("Такая задача уже существует");
+    return;
+  }
+
   const li = document.createElement("li");
 
   const span = document.createElement("span")
@@ -17,6 +28,7 @@ addBtn.addEventListener("click", () => {
   
   span.addEventListener("click", () => {
     span.classList.toggle("done");
+    taskList.classList.toggle("done")
   });
 
   const deleteBtn = document.createElement("button")
