@@ -30,19 +30,24 @@ addBtn.addEventListener("click", () => {
   span.textContent = text;
   
   span.addEventListener("click", () => {
-    span.classList.toggle("done");
-    taskList.classList.toggle("done")
+    li.classList.toggle("done");
   });
 
-  const deleteBtn = document.createElement("button")
-  deleteBtn.textContent = "Удалить"
+  const deleteBtn = document.createElement("button");
+  deleteBtn.type = "button";
+  deleteBtn.className = "taskDeleteBtn";
+  deleteBtn.textContent = "\u00D7";
+  deleteBtn.setAttribute("aria-label", "Удалить задачу");
 
   deleteBtn.addEventListener("click", () => {
     li.remove();
   });
 
-  li.appendChild(span);
-  li.appendChild(deleteBtn);
+  const row = document.createElement("div");
+  row.className = "taskRow";
+  row.appendChild(span);
+  row.appendChild(deleteBtn);
+  li.appendChild(row);
   taskList.appendChild(li);
 
   taskInput.value = "";
