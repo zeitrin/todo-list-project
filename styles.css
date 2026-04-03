@@ -16,7 +16,7 @@ body {
     line-height: 1.5;
   }
 
-.done {
+#taskList li.done .taskRow span {
     text-decoration: line-through;
     opacity: 0.6;
 }
@@ -57,17 +57,50 @@ body {
 }
 
 #taskList {
-    list-style: circle;
+    list-style: none;
+    margin: 0;
+    margin-top: 15px;
+    padding-left: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
 }
 
-#taskList.done {
-    list-style: disc;
+#taskList li {
+    list-style-type: circle;
+    list-style-position: outside;
+}
+
+#taskList li.done {
+    list-style-type: disc;
+}
+
+#taskList li .taskRow {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    gap: 8px;
 }
+
+.taskDeleteBtn {
+    flex-shrink: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #666;
+    font-size: 1.35rem;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.taskDeleteBtn:hover {
+    color: #c62828;
+    background: rgba(0, 0, 0, 0.06);
+}
+
