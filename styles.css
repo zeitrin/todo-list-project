@@ -27,11 +27,41 @@ body {
     justify-content: center;
 }
 
+.taskInputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+}
+
+.taskInputRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.taskInputRow input {
+    min-width: 0;
+}
+
+.fieldError {
+    min-height: 1em;
+    font-size: 12px;
+    color: #c62828;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 #taskList {
     list-style: circle;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 #taskList.done {
@@ -39,4 +69,5 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
