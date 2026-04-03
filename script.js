@@ -1,12 +1,15 @@
 const taskInput = document.getElementById("taskInput");
 const addBtn = document.getElementById("addBtn");
 const taskList = document.getElementById("taskList");
+const taskError = document.getElementById("taskError");
 
 addBtn.addEventListener("click", () => {
   const text = taskInput.value.trim();
   
+  taskError.textContent = "";
+
   if (text === "") {
-    alert("Введите задачу");
+    taskError.textContent = "Поле ввода задачи пустое";
     return;
   }
 
@@ -17,7 +20,7 @@ addBtn.addEventListener("click", () => {
   );
 
   if (isDuplicate) {
-    alert("Такая задача уже существует");
+    taskError.textContent = "Такая задача уже существует";
     return;
   }
 
@@ -43,4 +46,5 @@ addBtn.addEventListener("click", () => {
   taskList.appendChild(li);
 
   taskInput.value = "";
+  taskError.textContent = "";
 });
