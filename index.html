@@ -10,8 +10,14 @@
 <body>
     <h1>Мой Todo</h1>
     <div class="taskManager">
-      <input id="taskInput" type="text" placeholder="Введите задачу" />
-      <button id="addBtn">Добавить</button>
+      <div class="taskInputGroup">
+        <label for="taskInput"></label>
+        <div class="taskInputRow">
+          <input id="taskInput" type="text" placeholder="Введите задачу" />
+          <button id="addBtn" type="button">Добавить</button>
+        </div>
+        <div id="taskError" class="fieldError" aria-live="polite"></div>
+      </div>
     </div>
     <ul id="taskList"></ul>
 </body>
